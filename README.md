@@ -23,9 +23,14 @@ El navegador valida los cuatro campos y prepara un borrador para `info@fundacion
 - `index.html` contiene las secciones, los enlaces institucionales y los créditos.
 - `style.css` reúne los colores, los componentes y el diseño responsive.
 - `script.js` inicializa por separado la navegación compacta y el formulario.
+- `ia.js` clasifica donaciones desde una foto o la cámara y administra el resumen.
 - `imagenes/` contiene las fotografías optimizadas y el ícono institucional.
 
-Cuando exista un catálogo, puede incorporarse con sus datos y su módulo en una sección aparte. El reconocedor puede publicar un resultado con el identificador del artículo del catálogo, y un módulo de carrito puede usar ese identificador para recibir confirmaciones explícitas. Estas futuras funciones pueden incorporarse sin cambiar la validación del formulario. La versión actual no requiere cámara ni bibliotecas de reconocimiento.
+## Identificador de donaciones
+
+El [modelo de Teachable Machine](https://teachablemachine.withgoogle.com/models/Ltqgjmmjl/) reconoce ropa, alimentos no perecederos, insumos médicos y de higiene, y la clase «Nada». Se cargan TensorFlow.js, la biblioteca de imágenes y el modelo cuando la persona inicia una captura. Las fotos y la cámara se procesan en el navegador.
+
+Con una confianza de al menos 80 % se puede sumar una categoría de donación a la lista. «Nada» no se agrega. La lista vive en la página, se puede vaciar y no se envía a Fundación Sí. La cámara requiere permiso y un contexto seguro como GitHub Pages o localhost.
 
 ## Referencias
 
