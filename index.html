@@ -7,8 +7,9 @@
   <meta name="theme-color" content="#3f2561">
   <title>Fundación Sí | Visibilizar para Ayudar</title>
   <link rel="icon" href="imagenes/marca.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
   <script src="script.js" defer></script>
+  <script src="ia.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Ir al contenido</a>
@@ -25,6 +26,7 @@
           <li><a href="#quienes-somos">Quiénes somos</a></li>
           <li><a href="#equipo">Equipo</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#reconocer">Identificar donación</a></li>
           <li><a href="#financiamiento">Financiamiento</a></li>
           <li><a href="#contacto">Contacto</a></li>
           <li><a class="nav-cta" href="#como-ayudar">Cómo ayudar</a></li>
@@ -164,6 +166,38 @@
         <article><h3>Aporte de conocimientos</h3><p>Ofrecé tu experiencia para dar apoyo académico o colaborar en una actividad de tu especialidad.</p><a href="#contacto">Consultar cómo aportar</a></article>
         <article><h3>Difusión</h3><p>Compartí convocatorias y campañas publicadas por la fundación.</p><a href="https://www.instagram.com/sifundacion/">Ver campañas en Instagram</a></article>
         <article><h3>Colaboración logística</h3><p>Consultá si hace falta ayuda para recibir, clasificar o trasladar donaciones de alguna campaña.</p><a href="#contacto">Consultar por logística</a></article>
+      </div>
+    </section>
+
+    <section id="reconocer" class="panel" aria-labelledby="titulo-ia">
+      <h2 id="titulo-ia">Identificar donaciones</h2>
+      <p class="recognizer-intro">Subí una foto o mostrá un artículo a la cámara. El modelo reconoce ropa, alimentos no perecederos e insumos médicos y de higiene.</p>
+      <div class="recognizer-grid">
+        <div>
+          <div class="recognizer-controls" hidden>
+            <button type="button" class="button" id="ia-foto">Subir foto</button>
+            <input type="file" id="ia-archivo" accept="image/*" aria-label="Foto de la donación" hidden>
+            <button type="button" class="button secondary" id="ia-camara">Usar cámara</button>
+          </div>
+          <p id="ia-estado" class="recognizer-status" role="status"></p>
+          <div class="recognizer-preview" id="ia-visor" hidden></div>
+          <p class="source">La foto y el video se analizan en tu navegador.</p>
+          <noscript><p>Habilitá JavaScript para usar el identificador.</p></noscript>
+        </div>
+        <div>
+          <dl class="recognizer-scores" id="ia-confianza" aria-label="Confianza del modelo" hidden></dl>
+          <div class="recognizer-result" id="ia-resultado" hidden>
+            <p id="ia-prediccion" role="status"></p>
+            <button type="button" class="button" id="ia-sumar" hidden>Sumar a mi donación</button>
+          </div>
+          <div class="recognizer-summary">
+            <h3>Mi donación</h3>
+            <ul id="ia-lista" hidden></ul>
+            <p id="ia-total" role="status">Todavía no agregaste artículos.</p>
+            <button type="button" class="button secondary" id="ia-vaciar" hidden>Vaciar lista</button>
+            <p class="source">Esta lista es para organizarte. <a href="https://fundacionsi.org.ar/encontranos/">Consultá con una sede qué artículos recibe</a>.</p>
+          </div>
+        </div>
       </div>
     </section>
 
